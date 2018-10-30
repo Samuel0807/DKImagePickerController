@@ -90,6 +90,7 @@ open class DKImagePickerControllerBaseUIDelegate: NSObject, DKImagePickerControl
     }
     
     open func updateDoneButtonTitle(_ button: UIButton) {
+        button.isEnabled = (self.imagePickerController.selectedAssets.count == self.imagePickerController.maxSelectableCount)
         if self.imagePickerController.selectedAssetIdentifiers.count > 0 {
             
             let formatter = NumberFormatter()
